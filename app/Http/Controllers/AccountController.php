@@ -14,7 +14,7 @@ class AccountController extends Controller
     }
 
     //get
-    public function loginGet()
+    public function index()
     {
         if ($this->auth::check()) {
             return redirect()->intended('/');
@@ -23,7 +23,7 @@ class AccountController extends Controller
     }
 
     //post
-    public function loginPost()
+    public function login()
     {
         $credentials = request()->only('email', 'password');
         if ($this->auth::attempt($credentials)) {
@@ -33,6 +33,11 @@ class AccountController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
+    }
+
+    public function signup()
+    {
+        return view('signup.index');
     }
 
     public function logout()

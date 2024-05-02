@@ -2,19 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', [App\Http\Controllers\AccountController::class, 'loginGet'])->name('loginpage');
+Route::get('/login', [App\Http\Controllers\AccountController::class, 'index'])->name('loginpage');
 
-Route::post('/login', [App\Http\Controllers\AccountController::class, 'loginPost'])->name('login');
+Route::post('/login', [App\Http\Controllers\AccountController::class, 'login'])->name('login');
 
 Route::get('/logout', [App\Http\Controllers\AccountController::class, 'logout'])->name('logout');
+
+Route::get('/settings/user', [App\Http\Controllers\SettingsController::class, 'index'])->name('settings');
 
 Route::get('/', function () {
     return view('home.index');
 });
 
-Route::get('/signup', function () {
-    return view('signup.index');
-});
+Route::get('/signup', [App\Http\Controllers\AccountController::class, 'signup'])->name('signup');
+
+
 
 Route::get('/seed_user', function () {
     $user = new App\Models\User();

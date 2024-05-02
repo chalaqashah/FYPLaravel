@@ -15,14 +15,14 @@
             </a>
             <div class="min-w-2xl mx-10 my-16">
                 <h1 class="text-2xl font-bold mx-5">Account Signup</h1>
-                <form class="flex flex-col gap-4 px-5 py-5"  method="POST">
+                <form class="flex flex-col gap-4 px-5 py-5" action="{{ url('api/register') }}"  method="POST">
                     @csrf <!-- {{ csrf_field() }} -->
                     <label class="font-bold">Username</label>
                     <input type="text" name="username" class="border border-gray-500 input" placeholder="Username"/>
                     <label  class="font-bold">Email</label>
                     <input type="email" name="email" class="border border-gray-500 input" placeholder="Email"/>
                     <label  class="font-bold">Phone Number</label>
-                    <input type="email" name="email" class="border border-gray-500 input" placeholder="Phone Number"/>
+                    <input type="text" name="phonenumber" class="border border-gray-500 input" placeholder="Phone Number"/>
                     <label  class="font-bold">Password</label>
                     <input type="password" name="password" class="border border-gray-500 input" placeholder="Password"/>
                     <button type="submit" class="btn hover:bg-orange-600 border border-gray-500 hover:border-0 ">Signup</button>
