@@ -10,7 +10,8 @@ export default {
     theme: {
         colors: {
             ...colors,
-            login: "#3728E1"
+            login: "#3728E1",
+            dashboard: "#F8F8F8"
         },
         extend: {},
     },

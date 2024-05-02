@@ -16,6 +16,10 @@ Route::get('/', function () {
 
 Route::get('/signup', [App\Http\Controllers\AccountController::class, 'signup'])->name('signup');
 
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+
+});
 
 
 Route::get('/seed_user', function () {
