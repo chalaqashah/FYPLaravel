@@ -1,3 +1,5 @@
+import colors from "tailwindcss/colors.js";
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -6,6 +8,10 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
+        colors: {
+            ...colors,
+            login: "#3728E1"
+        },
         extend: {},
     },
     plugins: [require("daisyui")],

@@ -12,6 +12,10 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('/signup', function () {
+    return view('signup.index');
+});
+
 Route::get('/seed_user', function () {
     $user = new App\Models\User();
     $user->name = 'John Doe';
