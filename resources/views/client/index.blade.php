@@ -7,6 +7,7 @@
 {{--    Profile Pic, might put dropdown for logout  --}}
 
             @include('client.user_dropdown')
+            </div>
 
             <h1 class="text-xl font-bold mx-10">Dashboard</h1>
 

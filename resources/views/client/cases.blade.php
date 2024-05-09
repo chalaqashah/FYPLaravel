@@ -7,7 +7,7 @@
                 {{--    Profile Pic, might put dropdown for logout            --}}
                 @include('client.user_dropdown')
 
-
+            </div>
             <h1 class="text-xl font-bold mx-10">Cases</h1>
             <p class="my-3 mx-10">View your cases to see the progress, remarks, etc</p>
             <div class="mx-5">
@@ -33,7 +33,6 @@
                     </tbody>
                 </table>
 
-        </div>
         </div>
         </div>
     </section>
