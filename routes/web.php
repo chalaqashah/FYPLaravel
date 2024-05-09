@@ -20,7 +20,11 @@ Route::group(['prefix'=>'admin'], function(){
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
 
 });
-
+Route::group(['prefix'=> 'client'], function(){
+    Route::get('/dashboard', [App\Http\Controllers\ClientController::class, 'index'])->name('client.dashboard');
+    Route::get('/cases', [App\Http\Controllers\ClientController::class, 'cases'])->name('client.cases');
+    Route::get('/cases/{id}', [App\Http\Controllers\ClientController::class, 'case'])->name('client.cases.case');
+});
 
 Route::get('/seed_user', function () {
     $user = new App\Models\User();

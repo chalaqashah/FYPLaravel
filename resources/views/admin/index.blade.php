@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
     <section class="flex bg-dashboard font-['Poppins']">
-        @include('admin.navbar')
+        @include('navbar')
         <div class="w-full min-h-screen flex flex-col font-['Poppins']">
             <div class="flex justify-end">
                 <img class="mx-10 my-5 h-14 w-14 rounded-full object-cover"
