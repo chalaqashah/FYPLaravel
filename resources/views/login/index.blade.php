@@ -21,7 +21,7 @@
                     <input type="email" name="email" class="border border-gray-500 input" placeholder="Email"/>
                     <label  class="font-bold">Password</label>
                     <input type="password" name="password" class="border border-gray-500 input" placeholder="Password"/>
-                    <button type="submit" class="btn hover:text-white hover:bg-login border border-gray-500 hover:border-0">Signup</button>
+                    <button type="submit" class="btn hover:text-white hover:bg-login border border-gray-500 hover:border-0">Login</button>
                 </form>
                 <p class="text-center">Don't have an account?
                     <a class="text-login hover:cursor-pointer hover:underline" href="{{ url('/signup') }}" >Sign Up Here</a>
