@@ -1,7 +1,12 @@
 @extends('layout')
 @section('content')
     <section class="bg-zinc-50 min-h-screen py-10">
-        <h1 class="underline text-2xl mx-10 mb-10 ">User Profile</h1>
+        <div class="flex mx-10 mb-10 gap-5 items-center" >
+            <a href="{{url('/client/dashboard')}}" class="btn rounded-full">
+                <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </a>
+            <h1 class="underline text-2xl   ">User Profile</h1>
+        </div>
 
         <div class="flex  justify-between">
             <div id="profile" class="mx-10 flex ">
@@ -17,7 +22,7 @@
             </div>
             <div id="" class="flex items-center mx-12">
                 <button class="btn bg-blue-700 text-white mr-10">Upload New Photo</button>
-                <button class="btn">Delete</button>
+                <a href="{{url("client/settings/change-password")}}" class="btn">Change Password</a>
             </div>
 
         </div>
@@ -62,7 +67,8 @@
                 <label class="font-bold mx-11">Location</label>
                 <input type="text" name="address" class="border border-zinc-200 input mx-10" placeholder="Address"/>
             </div>
-            <submit class=" btn bg-blue-700 text-white mx-10">Save Changes</submit>
-        </form>
+            <input type="submit" class="btn btn-active ml-10"/>
+            <button type="button" class="btn bg-blue-700 mx-3">Edit Changes</button>
+            </form>
     </section>
 @endsection
