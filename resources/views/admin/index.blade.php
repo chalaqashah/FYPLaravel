@@ -9,20 +9,20 @@
                      class="w-full h-96 object-cover"/>
             </div>
             <h1 class="text-xl font-bold mx-10">Admin Panel</h1>
-            <div class="flex gap-2 mx-10 my-5 justify-between">
-                <div class="flex flex-col">
+            <div class="flex xs:sm:flex-col gap-2 mx-10 my-5  ">
+                <div class="flex flex-col flex-1">
                     <label class="font-bold mb-2 mx-1">Customer</label>
                     <input class="input border border-zinc-200">
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col flex-1">
                     <label class="font-bold mb-2 mx-1">Phone Number</label>
                     <input class="input border border-zinc-200">
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col flex-1">
                     <label class="font-bold mb-2 mx-1">Start Date</label>
                     <input class="input border border-zinc-200">
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col flex-1">
                     <label class="font-bold mb-2 mx-1">End Date</label>
                     <input class="input border border-zinc-200">
                 </div>
@@ -31,21 +31,31 @@
                 <button class="btn bg-zinc-500 text-white">Search</button>
                 <button class="btn bg-zinc-500 text-white">Reset</button>
             </div>
-            <div class="mx-5">
-                <table class="table">
+            <div class="mx-5 my-5">
+                <table class="table bg-white">
                     <thead>
                     <tr>
-                        <th>Name</th>
+                        <th>Case ID</th>
                         <th>Date</th>
-                        <th>Case</th>
-                        <th>Phone Number</th>
+                        <th>Case Status</th>
+                        <th>Handler</th>
                         <th>Paid Amount</th>
-                        <th>Due</th>
+                        <th>Amount Due</th>
+
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+                    @foreach($cases as $case)
+                        <tr>
+                            <td><a class="text-blue-600 hover:underline " href="{{url('admin/cases/' . $case->id )}}">{{$case->case_number}}</a></td>
+                            <td>{{$case->date}}</td>
+                            <td>{{$case->case_status}}</td>
+                            <td>1234567890</td>
+                        </tr>
+                    @endforeach
+                    </tbody>
                 </table>
+
             </div>
         </div>
     </section>
