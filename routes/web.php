@@ -21,12 +21,18 @@ Route::get('/signup', [App\Http\Controllers\AccountController::class, 'signup'])
 
 Route::group(['prefix'=>'admin','middleware'=>[\Spatie\Permission\Middleware\RoleMiddleware::using('admin')]], function(){
     Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
-
+    Route::get('/cases', [App\Http\Controllers\AdminController::class, 'cases'])->name('admin.cases');
+    Route::get('/cases/{id}', [App\Http\Controllers\AdminController::class, 'case'])->name('admin.cases.case');
+    Route::get('/appointments', [App\Http\Controllers\AdminController::class, 'appointments'])->name('admin.appointments');
+    Route::get('/appointments/{id}/approve', [App\Http\Controllers\AdminController::class, 'approveAppointment'])->name('admin.appointments.approve');
+    Route::get('/appointments/{id}/decline', [App\Http\Controllers\AdminController::class, 'declineAppointment'])->name('admin.appointments.decline');
 });
 Route::group(['prefix'=>'client','middleware'=>[\Spatie\Permission\Middleware\RoleMiddleware::using('client')]], function(){
     Route::get('/dashboard', [App\Http\Controllers\ClientController::class, 'index'])->name('client.dashboard');
     Route::get('/cases', [App\Http\Controllers\ClientController::class, 'cases'])->name('client.cases');
     Route::get('/cases/{id}', [App\Http\Controllers\ClientController::class, 'case'])->name('client.cases.case');
+    Route::get('/appointments', [App\Http\Controllers\ClientController::class, 'appointments'])->name('client.appointments');
+    Route::get('/appointments/request', [App\Http\Controllers\ClientController::class, 'requestAppointment'])->name('client.appointment.request');
     Route::get('/settings', [App\Http\Controllers\SettingsController::class, 'index'])->name('settings');
     Route::get('/settings/change-password', function () {
         return view('client.change_password');
